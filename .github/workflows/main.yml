@@ -1,0 +1,29 @@
+name: Gatling Load Testing Example
+
+on: [push]
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gradle/wrapper-validation-action@v1.0.4
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: "gradle"
+      - name: Gradle Build Action
+        uses: gradle/gradle-build-action@v2.1.5
+        env:
+          CI: true
+        with:
+          arguments: build
+
+      - name: Execute Gatling
+        run: ./gradlew gatlingRun

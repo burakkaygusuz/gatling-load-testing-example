@@ -1,0 +1,39 @@
+plugins {
+    id "scala"
+    id "io.gatling.gradle" version "3.7.6.2"
+}
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+group 'io.github.burakkaygusuz'
+version '1.0-SNAPSHOT'
+
+description = "Gatling Load Testing Example"
+
+dependencies {
+    implementation 'org.scala-lang:scala3-library_3:3.1.2'
+}
+
+sourceSets {
+    gatling {
+        scala.srcDir "src/gatling/scala"
+        resources.srcDir "src/gatling/resources"
+    }
+}
+
+rootProject.tasks.named("processGatlingResources") {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+gatling {
+    includeMainOutput = false
+    includeTestOutput = false
+    systemProperties = ['file.encoding': 'UTF-8']
+    logLevel = "WARN"
+    logHttp = null
+}
+
+gatlingRun {
+    simulations = { include "**/**/*Simulation*.scala" }
+}

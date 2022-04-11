@@ -1,0 +1,32 @@
+### Intellij ###
+.idea
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
+
+### Scala ###
+*.class
+*.log
+*.metals
+
+### Gradle ###
+.gradle
+build/
+
+### Gradle Patch ###
+**/build/
+
+##VSCode
+.vscode
+.classpath
+.project
+.settings
+.cache
+
+##Project
+build
+bin
+results
+
+.DS_Store
