@@ -1,6 +1,7 @@
 # Gatling Load Testing Example
 
 ![Gatling](https://img.shields.io/github/v/tag/gatling/gatling?color=f78557&label=gatling&logo=gatling&style=for-the-badge)
+![Scala](https://img.shields.io/github/v/tag/scala/scala?color=%23DC322F&label=scala&logo=scala&logoColor=%23DC322F&style=for-the-badge)
 
 A simple load testing automation example that built with Gatling, Scala and Gradle.
 
