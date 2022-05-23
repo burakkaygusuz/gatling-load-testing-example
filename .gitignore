@@ -23,6 +23,7 @@ build/
 .project
 .settings
 .cache
+.bloop
 
 ##Project
 build
