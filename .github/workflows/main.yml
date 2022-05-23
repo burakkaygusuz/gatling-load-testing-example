@@ -1,4 +1,4 @@
-name: Gatling Load Testing Example
+name: Gatling JSON Placeholder Load Testing
 
 on: [push]
 

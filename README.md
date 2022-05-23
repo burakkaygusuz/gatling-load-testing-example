@@ -1,9 +1,9 @@
-# Gatling Load Testing Example
+# Gatling JSON Placeholder Load Testing
 
 ![Gatling](https://img.shields.io/github/v/tag/gatling/gatling?color=f78557&label=gatling&logo=gatling&style=for-the-badge)
 ![Scala](https://img.shields.io/github/v/tag/scala/scala?color=%23DC322F&label=scala&logo=scala&logoColor=%23DC322F&style=for-the-badge)
 
-A simple load testing automation example that built with Gatling, Scala and Gradle.
+[JsonPlaceholder API](https://jsonplaceholder.typicode.com) load testing using gatling.io.
 
 ## Prerequisites
 
@@ -19,13 +19,13 @@ Make sure you have installed and be configured the environment variables all the
 - Clone the repository.
 
 ```shell
-git clone https://github.com/burakkaygusuz/gatling-load-testing-example.git
+git clone https://github.com/burakkaygusuz/gatling-jsonplaceholder-load-testing.git
 ```
 
 - Change the directory.
 
 ```shell
-cd gatling-load-testing-example
+cd gatling-jsonplaceholder-load-testing
 ```
 
 - Run the test.
