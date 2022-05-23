@@ -21,29 +21,41 @@ class BasicSimulation extends Simulation {
     .exec(deletingResource())
 
   def gettingResource(): ChainBuilder = {
-    exec(http("Getting a resource")
-      .get("/posts/1")
-      .check(status.is(200), jsonPath("$.userId").is("1")))
+    exec(
+      http("Getting a resource")
+        .get("/posts/1")
+        .check(status.is(200), jsonPath("$.userId").is("1"))
+    )
   }
 
   def creatingResource(): ChainBuilder = {
-    exec(http("Creating a resource")
-      .post("/posts")
-      .body(StringBody("""{"title": "foo", "body": "bar", "userId": 1}"""))
-      .check(status.is(201), jsonPath("$.id").is("101")))
+    exec(
+      http("Creating a resource")
+        .post("/posts")
+        .body(StringBody("""{"title": "foo", "body": "bar", "userId": 1}"""))
+        .check(status.is(201), jsonPath("$.id").is("101"))
+    )
   }
 
   def updatingResource(): ChainBuilder = {
-    exec(http("Updating a resource")
-      .put("/posts/1")
-      .body(StringBody("""{"id": "1","title": "foo", "body": "bar", "userId": 1}"""))
-      .check(status.is(200), jsonPath("$.id").is("1")))
+    exec(
+      http("Updating a resource")
+        .put("/posts/1")
+        .body(
+          StringBody(
+            """{"id": "1","title": "foo", "body": "bar", "userId": 1}"""
+          )
+        )
+        .check(status.is(200), jsonPath("$.id").is("1"))
+    )
   }
 
   def deletingResource(): ChainBuilder = {
-    exec(http("Deleting a resource")
-      .delete("/posts/1")
-      .check(status.is(200)))
+    exec(
+      http("Deleting a resource")
+        .delete("/posts/1")
+        .check(status.is(200))
+    )
   }
 
   setUp(builder.inject(atOnceUsers(1)))
@@ -51,5 +63,6 @@ class BasicSimulation extends Simulation {
     .assertions(
       global.responseTime.max.lt(1000),
       global.successfulRequests.percent.gt(95),
-      global.failedRequests.percent.is(0))
+      global.failedRequests.percent.is(0)
+    )
 }
