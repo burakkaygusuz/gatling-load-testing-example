@@ -11,6 +11,10 @@ version '1.0-SNAPSHOT'
 
 description = "Gatling Load Testing Example"
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation 'org.scala-lang:scala-library:2.13.8'
 }
