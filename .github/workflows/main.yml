@@ -21,7 +21,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Gradle Build Action
-        uses: gradle/gradle-build-action@v2.2.4
+        uses: gradle/gradle-build-action@v2.2.5
         env:
           CI: true
         with:
