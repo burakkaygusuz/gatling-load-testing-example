@@ -7,11 +7,11 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 
 class BasicSimulation extends Simulation {
 
-  val httpConfig: HttpProtocolBuilder = http
+  private val httpConfig: HttpProtocolBuilder = http
     .baseUrl("https://jsonplaceholder.typicode.com")
     .contentTypeHeader(HttpHeaderValues.ApplicationJson)
 
-  val builder: ScenarioBuilder = scenario("JSONPlaceholder Load Testing")
+  private val builder: ScenarioBuilder = scenario("JSONPlaceholder Load Testing")
     .exec(gettingResource())
     .pause(5)
     .exec(creatingResource())
@@ -20,7 +20,7 @@ class BasicSimulation extends Simulation {
     .pause(5)
     .exec(deletingResource())
 
-  def gettingResource(): ChainBuilder = {
+  private def gettingResource(): ChainBuilder = {
     exec(
       http("Getting a resource")
         .get("/posts/1")
@@ -28,7 +28,7 @@ class BasicSimulation extends Simulation {
     )
   }
 
-  def creatingResource(): ChainBuilder = {
+  private def creatingResource(): ChainBuilder = {
     exec(
       http("Creating a resource")
         .post("/posts")
@@ -37,7 +37,7 @@ class BasicSimulation extends Simulation {
     )
   }
 
-  def updatingResource(): ChainBuilder = {
+  private def updatingResource(): ChainBuilder = {
     exec(
       http("Updating a resource")
         .put("/posts/1")
@@ -50,7 +50,7 @@ class BasicSimulation extends Simulation {
     )
   }
 
-  def deletingResource(): ChainBuilder = {
+  private def deletingResource(): ChainBuilder = {
     exec(
       http("Deleting a resource")
         .delete("/posts/1")
