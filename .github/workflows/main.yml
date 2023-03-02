@@ -9,7 +9,7 @@ jobs:
       image: gradle:jdk17
     steps:
       - uses: actions/checkout@v3
-      - uses: gradle/wrapper-validation-action@v1.0.5
+      - uses: gradle/wrapper-validation-action@v1
   build:
     runs-on: ubuntu-latest
     container:
@@ -21,7 +21,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Gradle Build Action
-        uses: gradle/gradle-build-action@v2.4.0
+        uses: gradle/gradle-build-action@v2
         env:
           CI: true
         with:
