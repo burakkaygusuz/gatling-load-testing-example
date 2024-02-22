@@ -6,14 +6,14 @@ jobs:
   validation:
     runs-on: ubuntu-latest
     container:
-      image: gradle:jdk17
+      image: gradle:jdk21
     steps:
       - uses: actions/checkout@v4
       - uses: gradle/wrapper-validation-action@v2
   build:
     runs-on: ubuntu-latest
     container:
-      image: gradle:jdk17
+      image: gradle:jdk21
     steps:
       - uses: actions/checkout@v4
 

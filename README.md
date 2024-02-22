@@ -9,10 +9,10 @@
 
 Make sure you have installed and be configured the environment variables all the following prerequisites on your development machine:
 
-| OS      | JDK                                | Gradle                 |
-|---------|------------------------------------|------------------------|
-| Windows | `scoop install java/temurin17-jdk` | `scoop install gradle` |
-| macOS   | `brew install --cask temurin`      | `brew install gradle`  |
+| OS      | JDK                            | Gradle                 |
+| ------- | ------------------------------ | ---------------------- |
+| Windows | `scoop install java/openjdk21` | `scoop install gradle` |
+| macOS   | `brew install openjdk@21`      | `brew install gradle`  |
 
 ## Executing the Tests
 
