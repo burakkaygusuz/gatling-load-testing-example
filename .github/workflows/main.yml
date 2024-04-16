@@ -9,7 +9,7 @@ jobs:
       image: gradle:jdk21
     steps:
       - uses: actions/checkout@v4
-      - uses: gradle/wrapper-validation-action@v2
+      - uses: gradle/wrapper-validation-action@v3
   build:
     runs-on: ubuntu-latest
     container:
