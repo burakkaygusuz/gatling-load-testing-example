@@ -5,15 +5,19 @@ on: [push]
 jobs:
   validation:
     runs-on: ubuntu-latest
+
     container:
       image: gradle:jdk21
+
     steps:
       - uses: actions/checkout@v4
-      - uses: gradle/wrapper-validation-action@v3
+      - uses: gradle/actions/wrapper-validation@v3
   build:
     runs-on: ubuntu-latest
+
     container:
       image: gradle:jdk21
+
     steps:
       - uses: actions/checkout@v4
 
@@ -21,11 +25,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Gradle Build Action
-        uses: gradle/gradle-build-action@v3
-        env:
-          CI: true
-        with:
-          arguments: build
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Build with Gradle
+        run: ./gradlew build
 
       - name: Execute Gatling
         run: ./gradlew gatlingRun
