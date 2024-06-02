@@ -34,10 +34,4 @@ gatling {
     includeMainOutput = false
     includeTestOutput = false
     systemProperties = ['file.encoding': 'UTF-8']
-    logLevel = "WARN"
-    logHttp = null
-}
-
-gatlingRun {
-    simulations = { include "**/**/*Simulation*.scala" }
 }
